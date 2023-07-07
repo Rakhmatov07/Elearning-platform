@@ -58,6 +58,7 @@ CREATE TABLE admins(
 );
 
 INSERT INTO admins(username, password)
+VALUES('Rakhmatov_uzb', 'maestro07');
 
 SELECT course.name,
     course.image,
