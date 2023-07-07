@@ -8,6 +8,7 @@ const login = async(req, res) => {
         const admin = ((await pg("SELECT admin_uid, username, password FROM admins WHERE username=$1 and password=$2;", username, password)).rows)[0];
         if(!admin) res.status(404).json({message: "Not Found"});
         const token = sign(admin.admin_uid);
+        console.log(token);
         
         res.status(200).json({token});
     } catch (error) {
